@@ -6,33 +6,23 @@ using System.Threading.Tasks;
 
 namespace GenericsProblems
 {
-    public class MaximumGeneric
+    public class MaximumGeneric<M> where M : IComparable
     {
-        public void FindMaxInt(int a, int b, int c)
+        public M a, b, c;
+        public MaximumGeneric(M a, M b, M c)
         {
-            if (a > b && a > c)
-                Console.WriteLine("a is Maximum");
-            if (b > a && b > c)
-                Console.WriteLine("b is Maximum");
-            if (c > a && c > b)
-                Console.WriteLine("c is Maximum");
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
-        public void FindMaxFloat(float a, float b, float c)
+
+        public void FindMax()
         {
-            if (a > b && a > c)
+            if (this.a.CompareTo(this.b) > 0 && this.a.CompareTo(this.c) > 0)
                 Console.WriteLine("a is Maximum");
-            if (b > a && b > c)
+            if (this.b.CompareTo(this.a) > 0 && this.b.CompareTo(this.a) > 0)
                 Console.WriteLine("b is Maximum");
-            if (c > a && c > b)
-                Console.WriteLine("c is Maximum");
-        }
-        public void FindMaxString(string a, string b, string c)
-        {
-            if (a.CompareTo(b) > 0 && a.CompareTo(c) > 0)
-                Console.WriteLine("a is Maximum");
-            if (b.CompareTo(a) > 0 && b.CompareTo(a) > 0)
-                Console.WriteLine("b is Maximum");
-            if (c.CompareTo(a) > 0 && c.CompareTo(b) > 0)
+            if (this.c.CompareTo(this.a) > 0 && this.c.CompareTo(this.b) > 0)
                 Console.WriteLine("c is Maximum");
         }
     }

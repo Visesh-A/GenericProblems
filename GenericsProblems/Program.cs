@@ -9,11 +9,12 @@ namespace GenericsProblems
     {
         static void Main(string[] args)
         {
-            MaximumGeneric maximum = new MaximumGeneric();
-            maximum.FindMaxInt(12, 82, 5);
-            maximum.FindMaxFloat(15, 2, 23);
-            maximum.FindMaxString("Apple", "Peach", "Banana");
-
+            MaximumGeneric<int> maximum1 = new MaximumGeneric<int>(12, 82, 43);
+            maximum1.FindMax();
+            MaximumGeneric<float> maximum2 = new MaximumGeneric<float>(12, 8, 43);
+            maximum2.FindMax();
+            MaximumGeneric<string> maximum3 = new MaximumGeneric<string>("Apple", "Peach", "Banana");
+            maximum3.FindMax();
         }
     }
 
